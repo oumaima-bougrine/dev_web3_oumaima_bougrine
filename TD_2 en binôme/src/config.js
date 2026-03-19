@@ -1,0 +1,4 @@
+export const CONTRACT_ADDRESS = "0x291Ac3C6a92dF373dEa40fee62Ad39831B8A1DDC";
+export const EXPECTED_CHAIN_ID = 11155111;
+export const EXPECTED_NETWORK_NAME = "Sepolia";
+export const EXPLORER_BASE_URL = "https://sepolia.etherscan.io";
