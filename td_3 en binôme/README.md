@@ -247,5 +247,5 @@ Le projet est entièrement déployé et accessible en ligne. L'interface fronten
 🔗 **Lien de la dApp :** [https://dev-web3-oumaima-bougrine.vercel.app](https://dev-web3-oumaima-bougrine.vercel.app)
 
 ### Aperçu du déploiement Vercel
-![Déploiement Vercel](screenshots/Capture d’écran 2026-03-20 153908.png)
+![Déploiement Vercel](screenshots/vercel.png)
 *Figure 5 : Statut du déploiement sur Vercel. Le projet est configuré en mode "Production" avec un pipeline de déploiement continu lié au dépôt GitHub.*
