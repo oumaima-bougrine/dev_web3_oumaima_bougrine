@@ -1,0 +1,7 @@
+exit
+await vote.vote(99);
+await vote.getVotes(0);
+await vote.vote(0);
+await vote.getCandidatesCount();
+const vote = await Vote.deploy();
+const Vote = await ethers.getContractFactory("Vote");

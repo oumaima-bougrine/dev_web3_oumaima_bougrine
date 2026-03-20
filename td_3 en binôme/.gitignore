@@ -1,26 +1,9 @@
 # Node modules
 node_modules/
 
-# Hardhat artifacts/cache
-mon-contrat/artifacts/
-mon-contrat/cache/
-
-# React build output
-front_td3/dist/
-
 # dotenv
 mon-contrat/.env
 front_td3/.env
 
-# log files
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 
-# OS files
-.DS_Store
-Thumbs.db
 
-# Optional editor files
-.vscode/
-.idea/

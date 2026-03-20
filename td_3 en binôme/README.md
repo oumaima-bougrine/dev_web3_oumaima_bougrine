@@ -1,5 +1,8 @@
 # TD3 Smart Contract + Frontend (React)
 
+## 🧑‍💻 Auteurs / Noms
+- Étudiants : Oumaima Bougrine Benjamin Carteron
+
 🧠 Concepts Théoriques Appliqués
 Ce projet met en œuvre les piliers de la technologie blockchain étudiés en cours :
 
@@ -13,6 +16,8 @@ Projet: vote décentralisé (Bloc 4 - B3). Cette branche contient:
 - `mon-contrat/` : Hardhat + contrat Solidity `Vote.sol` + déploiement + config réseau
 - `front_td3/` : application React + Ethers.js (lectures + vote + événements)
 - adresse du contrat Sepolia : `0x19DBdb27F62f23ce45466FeE2bF3225F40c35575`
+- Lien Etherscan : https://sepolia.etherscan.io/address/0x19DBdb27F62f23ce45466FeE2bF3225F40c35575
+- L'URL de l'App déployée sur Vercel : https://dev-web3-oumaima-bougrine.vercel.app
 
 ## ✅ Ce que tu as construit
 
@@ -143,7 +148,50 @@ front_td3/
 
 ---
 
-## 📌 Résultat du TD
+## �️ Guide de démarrage rapide
+Pour tester ou déployer le projet localement, suivez ces étapes :
+
+1. Configuration du Smart Contract (mon-contrat/)
+
+```bash
+# Se placer dans le dossier
+cd mon-contrat
+
+# Installer les dépendances (Hardhat, Ethers, Dotenv)
+npm install
+
+# Compiler le contrat Solidity
+npx hardhat compile
+
+# Lancer les tests unitaires
+npx hardhat test
+
+# Déployer sur Sepolia (nécessite un fichier .env configuré)
+npx hardhat run scripts/deploy.js --network sepolia
+
+# Vérifier le contrat sur Etherscan
+npx hardhat verify --network sepolia 0x19DBdb27F62f23ce45466FeE2bF3225F40c35575
+```
+
+2. Configuration du Frontend (front_td3/)
+
+```bash
+# Se placer dans le dossier
+cd ../front_td3
+
+# Installer les dépendances (React, Ethers, Vite)
+npm install
+
+# Lancer l'application en mode développement
+npm run dev
+
+# Générer le build de production
+npm run build
+```
+
+---
+
+## �📌 Résultat du TD
 
 - Contrat Solidity déployé sur Sepolia
 - API contract accessible via `CONTRACT_ADDRESS`
@@ -169,20 +217,35 @@ Durant le développement, plusieurs obstacles ont été surmontés :
 Cette section présente les preuves visuelles de l'intégration réussie entre le contrat Solidity et l'interface React, conformément aux objectifs du TD.
 
 ### 1. Interface Utilisateur et Connexion Web3
-![Interface de Vote](screenshots\Capture d'écran 2026-03-20 130841.png)
+![Interface de Vote](screenshots/Capture d'écran 2026-03-20 130841.png)
 *Figure 1 : Capture de l'application en cours d'exécution sur localhost. On observe que l'adresse du wallet (0x562e...) est correctement récupérée via le Signer de MetaMask. Les données des candidats (noms et scores) sont lues en temps réel depuis le contrat Sepolia.*
 
 ### 2. Validation du Déploiement (Etherscan)
-![Transactions Etherscan](screenshots\Capture d'écran 2026-03-20 122741.png)
+![Transactions Etherscan](screenshots/Capture d'écran 2026-03-20 122741.png)
 *Figure 2 : Consultation du contrat sur Sepolia Etherscan. Cette capture confirme la création du contrat et l'historique des premières transactions. C'est la preuve de l'immuabilité et de la transparence du système.*
 
 
 
 ### 3. Signature et Sécurité via MetaMask
-![Signature MetaMask](screenshots\Capture d'écran 2026-03-20 123156.png)
+![Signature MetaMask](screenshots/Capture d'écran 2026-03-20 123156.png)
 *Figure 3 : Fenêtre de confirmation MetaMask déclenchée lors d'un vote. On y voit l'estimation des frais de Gas et l'appel à la fonction `vote`. Cela illustre la séparation entre la dApp (qui prépare la transaction) et le Wallet (qui la signe).*
 
 ### 4. Traçabilité des Événements (Logs)
-![Logs Solidity](screenshots\Capture d'écran 2026-03-20 123328.png)
+![Logs Solidity](screenshots/Capture d'écran 2026-03-20 123328.png)
 *Figure 4 : Détail de l'événement "Voted" décodé sur la blockchain. L'utilisation des Events Solidity permet au frontend d'écouter les changements d'état sans avoir à interroger le réseau en boucle (polling), optimisant ainsi les performances.*
 
+### 💎 Vérification du Smart Contract
+Le code source du contrat a été vérifié sur Etherscan. Cette étape garantit que le bytecode déployé correspond exactement au code Solidity fourni, permettant une auditabilité complète par les tiers.
+
+![Vérification Etherscan](screenshots/Capture d'écran 2026-03-20 160413.png)
+*Figure 6 : Statut "Contract Source Code Verified". On y voit la version du compilateur (0.8.20) et le code source complet accessible publiquement.*
+
+## 🚀 Déploiement en Production
+
+Le projet est entièrement déployé et accessible en ligne. L'interface frontend est hébergée sur **Vercel** et communique avec le Smart Contract via le réseau de test **Sepolia**.
+
+🔗 **Lien de la dApp :** [https://dev-web3-oumaima-bougrine.vercel.app](https://dev-web3-oumaima-bougrine.vercel.app)
+
+### Aperçu du déploiement Vercel
+![Déploiement Vercel](screenshots/Capture d’écran 2026-03-20 153908.png)
+*Figure 5 : Statut du déploiement sur Vercel. Le projet est configuré en mode "Production" avec un pipeline de déploiement continu lié au dépôt GitHub.*
