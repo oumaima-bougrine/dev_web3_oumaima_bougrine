@@ -217,27 +217,27 @@ Durant le développement, plusieurs obstacles ont été surmontés :
 Cette section présente les preuves visuelles de l'intégration réussie entre le contrat Solidity et l'interface React, conformément aux objectifs du TD.
 
 ### 1. Interface Utilisateur et Connexion Web3
-![Interface de Vote](screenshots/Capture d'écran 2026-03-20 130841.png)
+![Interface de Vote](screenshots/interface.png)
 *Figure 1 : Capture de l'application en cours d'exécution sur localhost. On observe que l'adresse du wallet (0x562e...) est correctement récupérée via le Signer de MetaMask. Les données des candidats (noms et scores) sont lues en temps réel depuis le contrat Sepolia.*
 
 ### 2. Validation du Déploiement (Etherscan)
-![Transactions Etherscan](screenshots/Capture d'écran 2026-03-20 122741.png)
+![Transactions Etherscan](screenshots/transactions.png)
 *Figure 2 : Consultation du contrat sur Sepolia Etherscan. Cette capture confirme la création du contrat et l'historique des premières transactions. C'est la preuve de l'immuabilité et de la transparence du système.*
 
 
 
 ### 3. Signature et Sécurité via MetaMask
-![Signature MetaMask](screenshots/Capture d'écran 2026-03-20 123156.png)
+![Signature MetaMask](screenshots/signature.png)
 *Figure 3 : Fenêtre de confirmation MetaMask déclenchée lors d'un vote. On y voit l'estimation des frais de Gas et l'appel à la fonction `vote`. Cela illustre la séparation entre la dApp (qui prépare la transaction) et le Wallet (qui la signe).*
 
 ### 4. Traçabilité des Événements (Logs)
-![Logs Solidity](screenshots/Capture d'écran 2026-03-20 123328.png)
+![Logs Solidity](screenshots/logs.png)
 *Figure 4 : Détail de l'événement "Voted" décodé sur la blockchain. L'utilisation des Events Solidity permet au frontend d'écouter les changements d'état sans avoir à interroger le réseau en boucle (polling), optimisant ainsi les performances.*
 
 ### 💎 Vérification du Smart Contract
 Le code source du contrat a été vérifié sur Etherscan. Cette étape garantit que le bytecode déployé correspond exactement au code Solidity fourni, permettant une auditabilité complète par les tiers.
 
-![Vérification Etherscan](screenshots/Capture d'écran 2026-03-20 160413.png)
+![Vérification Etherscan](screenshots/etherscan.png)
 *Figure 6 : Statut "Contract Source Code Verified". On y voit la version du compilateur (0.8.20) et le code source complet accessible publiquement.*
 
 ## 🚀 Déploiement en Production
